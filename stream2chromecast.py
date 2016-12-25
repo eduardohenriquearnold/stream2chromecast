@@ -232,7 +232,7 @@ class RequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 class TranscodingRequestHandler(RequestHandler):
     """ Handle HTTP requests for files which require realtime transcoding with ffmpeg """
     transcoder_command = FFMPEG
-    transcode_options = ""
+    transcode_options = "-vcodec libx264 -acodec aac -movflags frag_keyframe+empty_moov"
     transcode_input_options = ""    
     bufsize = 0
                     
